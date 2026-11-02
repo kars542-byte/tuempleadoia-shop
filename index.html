@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TuEmpleadoIA.shop | Tu equipo de IA para emprender</title>
+<meta name="description" content="Arma tu equipo de empleados IA sin contratar. Project manager, contador, marketing y más. Para emprendedores que quieren escalar rápido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--violet:#6d28d9;--violet-dark:#4c1d95;--coral:#ff6b6b;--mint:#10b981;--ink:#1f1b2e;--bg:#fdfbff;--gray:#6b6880}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(253,251,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid #ede9f6}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+  .logo{font-weight:800;font-size:1.35rem;color:var(--violet-dark);display:flex;align-items:center;gap:8px}
+  .logo-dot{width:12px;height:12px;background:var(--coral);border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav a{color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:500;transition:.2s}
+  nav a:hover{color:var(--violet)}
+  .btn{display:inline-block;padding:14px 28px;background:var(--violet);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;border-radius:50px;transition:.3s;border:none;cursor:pointer;box-shadow:0 8px 20px -8px rgba(109,40,217,.5)}
+  .btn:hover{background:var(--violet-dark);transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(109,40,217,.6)}
+  .btn-coral{background:var(--coral);box-shadow:0 8px 20px -8px rgba(255,107,107,.5)}
+  .btn-coral:hover{background:#ff5252}
+  .hero{padding:100px 0 80px;position:relative}
+  .hero::before{content:'';position:absolute;top:0;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(109,40,217,.12),transparent 70%);border-radius:50%;z-index:-1}
+  .hero::after{content:'';position:absolute;bottom:0;right:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(255,107,107,.1),transparent 70%);border-radius:50%;z-index:-1}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#f3ecff;color:var(--violet);font-size:.8rem;font-weight:600;border-radius:50px;margin-bottom:20px}
+  .pill span{width:8px;height:8px;background:var(--mint);border-radius:50%}
+  .hero h1{font-size:3.2rem;font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-1px}
+  .hero h1 .highlight{background:linear-gradient(120deg,var(--violet),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{font-size:1.1rem;color:var(--gray);margin-bottom:32px;max-width:520px}
+  .hero-visual{position:relative}
+  .phone-mock{width:100%;max-width:340px;margin:0 auto;background:#fff;border-radius:32px;padding:20px;box-shadow:0 30px 60px -20px rgba(109,40,217,.3);border:1px solid #ede9f6;transform:rotate(-3deg);transition:.4s}
+  .phone-mock:hover{transform:rotate(0)}
+  .chat-bubble{background:#f3ecff;padding:12px 16px;border-radius:16px;margin-bottom:10px;font-size:.85rem;color:var(--ink);max-width:85%}
+  .chat-bubble.me{background:var(--violet);color:#fff;margin-left:auto}
+  .chat-bubble .role{font-size:.7rem;font-weight:600;color:var(--violet);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px}
+  .chat-bubble.me .role{color:#c4b5fd}
+  section{padding:90px 0}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 56px}
+  .section-head h2{font-size:2.4rem;font-weight:800;margin-bottom:14px;letter-spacing:-.5px}
+  .section-head p{color:var(--gray);font-size:1.05rem}
+  .grid-roles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .role-card{background:#fff;border-radius:20px;padding:32px 28px;border:1px solid #ede9f6;transition:.3s;position:relative;overflow:hidden}
+  .role-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--violet),var(--coral));opacity:0;transition:.3s}
+  .role-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(109,40,217,.25);border-color:transparent}
+  .role-card:hover::before{opacity:1}
+  .role-emoji{font-size:2.4rem;margin-bottom:16px;display:block}
+  .role-card h3{font-size:1.15rem;margin-bottom:8px;font-weight:700}
+  .role-tag{font-size:.72rem;color:var(--violet);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;display:block}
+  .role-card p{font-size:.9rem;color:var(--gray)}
+  .role-card ul{list-style:none;margin-top:14px;font-size:.85rem;color:var(--gray)}
+  .role-card ul li{padding-left:20px;position:relative;margin-bottom:4px}
+  .role-card ul li::before{content:'✓';position:absolute;left:0;color:var(--mint);font-weight:700}
+  .why{background:#f9f5ff}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+  .why-item{text-align:center;padding:24px}
+  .why-num{font-size:2.5rem;font-weight:800;background:linear-gradient(120deg,var(--violet),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:8px}
+  .why-item h4{font-size:1rem;margin-bottom:6px}
+  .why-item p{font-size:.85rem;color:var(--gray)}
+  .cta{background:linear-gradient(135deg,var(--violet-dark),var(--violet));color:#fff;border-radius:32px;margin:0 24px;padding:80px 40px;text-align:center;position:relative;overflow:hidden}
+  .cta::before{content:'🚀';position:absolute;font-size:8rem;opacity:.1;top:-20px;right:20px;transform:rotate(-15deg)}
+  .cta h2{font-size:2.4rem;font-weight:800;margin-bottom:16px}
+  .cta p{opacity:.9;max-width:520px;margin:0 auto 32px}
+  .cta .btn{background:#fff;color:var(--violet);box-shadow:0 8px 20px -8px rgba(0,0,0,.3)}
+  .cta .btn:hover{background:#f3ecff;transform:translateY(-2px)}
+  footer{padding:60px 0 40px;text-align:center;color:var(--gray);font-size:.88rem}
+  footer a{color:var(--violet);text-decoration:none;font-weight:600}
+  @media(max-width:900px){
+    .hero-grid,.grid-roles,.why-grid{grid-template-columns:1fr}
+    .hero h1{font-size:2.2rem}
+    nav ul{display:none}
+    .cta{margin:0 16px;padding:60px 24px}
+    .cta h2{font-size:1.8rem}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <div class="logo"><span class="logo-dot"></span>tuempleadoia<span style="color:var(--coral)">.shop</span></div>
+    <ul>
+      <li><a href="#roles">Empleados IA</a></li>
+      <li><a href="#porque">Por qué</a></li>
+      <li><a href="#empezar">Empezar</a></li>
+    </ul>
+    <a href="#empezar" class="btn btn-coral">Quiero mi equipo</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill"><span></span>Sin contratos · Sin planilla · 100% digital</span>
+      <h1>Tu startup merece un equipo que <span class="highlight">rinda como uno grande</span>.</h1>
+      <p>Contrata empleados de inteligencia artificial por una fracción del costo de un sueldo. Project manager, contador, marketing, logística y más. Listos en minutos.</p>
+      <a href="#roles" class="btn">Ver empleados disponibles</a>
+      <a href="https://wa.me/51946736815?text=Hola,%20vengo%20de%20tuempleadoia.shop" class="btn btn-coral" style="margin-left:10px">Hablar por WhatsApp</a>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mock">
+        <div class="chat-bubble"><span class="role">Project Manager IA</span>Hola 👋 Tu cronograma del sprint está listo. Detecté 2 riesgos que debemos revisar hoy.</div>
+        <div class="chat-bubble me"><span class="role">Tú</span>Perfecto, muéstrame el reporte</div>
+        <div class="chat-bubble"><span class="role">Contador IA</span>Ya concilié los movimientos del mes. Todo cuadra ✅</div>
+        <div class="chat-bubble me"><span class="role">Tú</span>¡Genial! Este equipo es otro nivel 🚀</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roles">
+  <div class="container">
+    <div class="section-head">
+      <h2>Elige a tu próximo empleado IA</h2>
+      <p>Cada uno entrenado con metodologías reales. Todos disponibles 24/7 para tu emprendimiento.</p>
+    </div>
+    <div class="grid-roles">
+      <div class="role-card">
+        <span class="role-emoji">📋</span>
+        <h3>Project Manager IA</h3>
+        <span class="role-tag">Metodología PMBOK®</span>
+        <p>Organiza tu roadmap, sprints y riesgos como un PM certificado.</p>
+        <ul><li>Cronogramas automáticos</li><li>Alertas de riesgos</li><li>Reportes ejecutivos</li></ul>
+      </div>
+      <div class="role-card">
+        <span class="role-emoji">🚚</span>
+        <h3>Logístico IA</h3>
+        <span class="role-tag">Modelo SCOR®</span>
+        <p>Optimiza entregas, rutas y costos de tu cadena de suministro.</p>
+        <ul><li>Planificación de demanda</li><li>Rutas más eficientes</li><li>Control de proveedores</li></ul>
+      </div>
+      <div class="role-card">
+        <span class="role-emoji">💰</span>
+        <h3>Contador IA</h3>
+        <span class="role-tag">Normas NIIF</span>
+        <p>Lleva tus gastos, cobranzas y finanzas sin perder un sol.</p>
+        <ul><li>Cuentas por cobrar</li><li>Conciliaciones</li><li>Reportes mensuales</li></ul>
+      </div>
+      <div class="role-card">
+        <span class="role-emoji">👥</span>
+        <h3>Planillero IA</h3>
+        <span class="role-tag">Normativa laboral LATAM</span>
+        <p>Calcula planillas, CTS y beneficios sin errores ni multas.</p>
+        <ul><li>Planilla automática</li><li>Control de asistencia</li><li>Cumplimiento legal</li></ul>
+      </div>
+      <div class="role-card">
+        <span class="role-emoji">📈</span>
+        <h3>Marketing IA</h3>
+        <span class="role-tag">Funnel AIDA</span>
+        <p>Pre-venta, venta y post-venta automatizada para tu startup.</p>
+        <ul><li>Generación de leads</li><li>Seguimiento automático</li><li>Fidelización de clientes</li></ul>
+      </div>
+      <div class="role-card">
+        <span class="role-emoji">📦</span>
+        <h3>Almacenero IA</h3>
+        <span class="role-tag">Metodología 5S · ABC</span>
+        <p>Control de inventario, herramientas y materiales en tiempo real.</p>
+        <ul><li>Entradas y salidas</li><li>Alertas de stock</li><li>Valorización automática</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="porque">
+  <div class="container">
+    <div class="section-head">
+      <h2>¿Por qué elegir IA y no contratar?</h2>
+      <p>La diferencia que necesitas para escalar sin quebrar tu flujo de caja.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><span class="why-num">10x</span><h4>Más barato</h4><p>Fracción del costo de un sueldo más beneficios sociales.</p></div>
+      <div class="why-item"><span class="why-num">24/7</span><h4>Siempre activo</h4><p>No duerme, no se enferma, no se va de vacaciones.</p></div>
+      <div class="why-item"><span class="why-num">0</span><h4>Cero planilla</h4><p>Sin contratos, sin CTS, sin liquidaciones. Solo resultados.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="empezar">
+  <div class="container">
+    <div class="cta">
+      <h2>Arma tu equipo de IA hoy</h2>
+      <p>Cuéntanos qué necesita tu emprendimiento y te proponemos un combo de empleados IA en minutos.</p>
+      <a href="https://wa.me/51946736815?text=Hola,%20vengo%20de%20tuempleadoia.shop%20y%20quiero%20armar%20mi%20equipo%20de%20IA" class="btn">Empezar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><strong>tuempleadoia.shop</strong> · Tu equipo de IA para emprender</p>
+    <p style="margin-top:8px">WhatsApp: <a href="https://wa.me/51946736815">+51 946 736 815</a> · México · Perú · Costa Rica · Colombia</p>
+    <p style="margin-top:16px;font-size:.8rem;opacity:.7">© 2026 TuEmpleadoIA. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
